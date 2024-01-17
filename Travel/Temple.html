@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temple</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            /* Remove overflow: hidden; to allow scrolling */
+        }
+
+        header {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        h1 {
+            display: inline-block;
+            margin: 0;
+        }
+
+        #random-button {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            transition: margin-top 0.5s ease; /* Add transition for smooth animation */
+        }
+
+        .frame {
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            display: flex;
+        }
+
+        img {
+            width: 300px;
+        }
+
+        .text-container {
+            flex: 1;
+            padding: 20px;
+        }
+
+        h2 {
+            margin: 0;
+        }
+
+        /* Animation for gray balls */
+        @keyframes ballAnimation {
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        .ball-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 150px; /* Height of the space between h1 and main */
+            overflow: hidden;
+        }
+
+        .ball {
+            width: 20px;
+            height: 20px;
+            background-color: #aaa;
+            border-radius: 50%;
+            position: absolute;
+            animation: ballAnimation 1s linear infinite; /* Faster animation */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Temple</h1>
+        <button id="random-button" onclick="openRandomFrame()">Random</button>
+    </header>
+
+    <main id="main-container">
+        <!-- Your existing frames remain unchanged -->
+        <!-- First Frame -->
+        <div class="frame">
+            <img src="picture/Temple/pic1.jpg" alt="Your Image Description">
+            <div class="text-container">
+                <h2>Emerald Buddha Temple</h2>
+                <p>วัดพระแก้ว</p>
+                <p>See another details >>> <a href="https://maps.app.goo.gl/7y9VaHPGkCQusfTg7" target="_blank">Map</a>.</p>
+            </div>
+        </div>
+
+        <!-- Duplicate the frame as needed -->
+        <!-- Second Frame -->
+        <div class="frame">
+            <img src="picture/Temple/pic2.jpg" alt="Your Image Description">
+            <div class="text-container">
+                <h2>the Temple of Dawn</h2>
+                <p>วัดอรุณ</p>
+                <p>See another details >>> <a href="https://maps.app.goo.gl/6XtxkcWR4ezvosQy5" target="_blank">Map</a>.</p>
+            </div>
+        </div>
+
+        <!-- Third Frame -->
+        <div class="frame">
+            <img src="picture/Temple/pic3.jpg" alt="Your Image Description">
+            <div class="text-container">
+                <h2>the Temple of the Reclining Buddha</h2>
+                <p>วัดโพธิ์</p>
+                <p>See another details >>> <a href="https://maps.app.goo.gl/LxtEBMCxHmrDcHor9" target="_blank">Map</a>.</p>
+            </div>
+        </div>
+
+        <!-- Fourth Frame -->
+        <div class="frame">
+            <img src="picture/Temple/pic4.jpg" alt="Your Image Description">
+            <div class="text-container">
+                <h2>Wat Maniwong</h2>
+                <p>วัดมณีวงศ์</p>
+                <p>See another details >>> <a href="https://maps.app.goo.gl/RpoYpFJ1NTfAoM2K6" target="_blank">Map</a>.</p>
+            </div>
+        </div>
+
+        <!-- Fifth Frame -->
+        <div class="frame">
+            <img src="picture/Temple/pic5.jpg" alt="Your Image Description">
+            <div class="text-container">
+                <h2>White Temple</h2>
+                <p>วัดร่องขุ่น</p>
+                <p>See another details >>> <a href="https://maps.app.goo.gl/68WDkLj5jZyptnFz8" target="_blank">Map</a>.</p>
+            </div>
+        </div>
+
+        <!-- Sixth Frame -->
+        <div class="frame">
+            <img src="picture/Temple/pic6.jpg" alt="Your Image Description">
+            <div class="text-container">
+                <h2>Wat Chaiwatthanaram</h2>
+                <p>วัดไชยวัฒนาราม</p>
+                <p>See another details >>> <a href="https://maps.app.goo.gl/mkErYbj3tCVP7Cbi8" target="_blank">Map</a>.</p>
+            </div>
+        </div>
+
+        <!-- Seventh Frame -->
+        <div class="frame">
+            <img src="picture/Temple/pic7.jpg" alt="Your Image Description">
+            <div class="text-container">
+                <h2>Temple of the Holy, Splendid Omniscient</h2>
+                <p>วัดพระศรีสรรเพชญ์</p>
+                <p>See another details >>> <a href="https://maps.app.goo.gl/nvfGaamCeX1YaH9h7" target="_blank">Map</a>.</p>
+            </div>
+        </div>
+
+        <!-- Eighth Frame -->
+        <div class="frame">
+            <img src="picture/Temple/pic8.jpg" alt="Your Image Description">
+            <div class="text-container">
+                <h2>Wat Phrathat Doi Suthep</h2>
+                <p>วัดพระธาตุดอยสุเทพ</p>
+                <p>See another details >>> <a href="https://maps.app.goo.gl/A5xKHKqWwSHUHocw9" target="_blank">Map</a>.</p>
+            </div>
+        </div>
+
+        <!-- Ninth Frame -->
+        <div class="frame">
+            <img src="picture/Temple/pic9.jpg" alt="Your Image Description">
+            <div class="text-container">
+                <h2>Temple of the Golden Mount Bangkok</h2>
+                <p>วัดสระเกศ หรือ วัดภูเขาทอง</p>
+                <p>See another details >>> <a href="https://maps.app.goo.gl/MYSsoUGNxhZDPZhL6" target="_blank">Map</a>.</p>
+            </div>
+        </div>
+
+        <!-- Tenth Frame -->
+        <div class="frame">
+            <img src="picture/Temple/pic10.jpg" alt="Your Image Description">
+            <div class="text-container">
+                <h2>Temple of Dignity</h2>
+                <p>วัดโสธรวรารามวรวิหาร</p>
+                <p>See another details >>> <a href="https://maps.app.goo.gl/dJmKS4cMuASbxk6P8" target="_blank">Map</a>.</p>
+            </div>
+        </div>
+
+    </main>
+    <script>
+         function openRandomFrame() {
+            // Add space between h1 and main
+            var mainContainer = document.getElementById('main-container');
+            mainContainer.style.marginTop = '250px'; // Increase space to 250 pixels
+    
+            // Create animation of gray balls within the space
+            createBalls();
+    
+            // Reset margin after 2 seconds
+            setTimeout(function() {
+                mainContainer.style.marginTop = '20px'; // Adjust to your original margin value
+            }, 2000);
+
+            setTimeout(function() {
+                createPopupFrame();
+                // Reset margin after creating the popup frame
+                mainContainer.style.marginTop = '20px'; // Adjust to your original margin value
+            }, 2000);
+        }
+
+        function createPopupFrame() {
+            // Create a popup frame
+            var popupFrame = document.createElement('div');
+            popupFrame.className = 'popup-frame';
+            document.body.appendChild(popupFrame);
+
+            // Get a random frame from main
+            var frames = document.querySelectorAll('.frame');
+            var randomIndex = Math.floor(Math.random() * frames.length);
+            var randomFrame = frames[randomIndex].cloneNode(true);
+
+            // Append the random frame to the popup
+            popupFrame.appendChild(randomFrame);
+
+            // Add a close button to the popup frame
+            var closeButton = document.createElement('button');
+            closeButton.innerHTML = '<strong>X</strong>';
+            closeButton.style.position = 'absolute';
+            closeButton.style.top = '10px';
+            closeButton.style.right = '10px';
+            closeButton.style.padding = '5px 10px';
+            closeButton.style.border = 'none';
+            closeButton.style.borderRadius = '5px';
+            closeButton.style.backgroundColor = 'red';
+            closeButton.style.color = 'white';
+            closeButton.addEventListener('click', closePopupFrame);
+            popupFrame.appendChild(closeButton);
+
+            // Add styling to the popup frame
+            popupFrame.style.position = 'fixed';
+            popupFrame.style.top = '50%';
+            popupFrame.style.left = '50%';
+            popupFrame.style.transform = 'translate(-50%, -50%)';
+            popupFrame.style.zIndex = '1000';
+            popupFrame.style.backgroundColor = 'white';
+            popupFrame.style.padding = '20px';
+            popupFrame.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
+            popupFrame.style.borderRadius = '10px'; // Adjust the value for the desired roundness
+        }
+
+        function closePopupFrame() {
+            // Remove the popup frame
+            var popupFrame = document.querySelector('.popup-frame');
+            if (popupFrame) {
+                document.body.removeChild(popupFrame);
+            }
+        }
+    
+        function createBalls() {
+            var ballContainer = document.createElement('div');
+            ballContainer.className = 'ball-container';
+            document.body.appendChild(ballContainer);
+    
+            var pastelColors = [
+                '#ffd1dc', // Pastel Pink
+                '#ffb6c1', // Light Pink
+                '#ffecb3', // Light Yellow
+                '#ffddb3', // Pastel Orange
+                '#b3e0ff', // Sky Blue
+                '#b3e0c1', // Mint Green
+                '#d9b3ff', // Lavender
+                '#c1b3ff', // Pastel Purple
+                '#c1e0ff', // Light Blue
+                '#d1ffc1'  // Light Green
+            ];
+    
+            for (var i = 0; i < 50; i++) { // Increase the number of balls to 50
+                var ball = document.createElement('div');
+                ball.className = 'ball';
+                ball.style.top = Math.floor(Math.random() * 200) + 'px'; // Random position within the space
+                ball.style.left = Math.floor(Math.random() * window.innerWidth) + 'px';
+                ball.style.animationDuration = (Math.random() * 0.5 + 0.2) + 's'; // Faster animation (adjust values as needed)
+                ball.style.backgroundColor = pastelColors[i % pastelColors.length]; // Cycling through pastel colors
+                ball.style.width = Math.floor(Math.random() * 30 + 10) + 'px'; // Random width between 10 and 40 pixels
+                ball.style.height = ball.style.width; // Ensure the ball is a circle
+                ballContainer.appendChild(ball);
+            }
+    
+            // Remove balls after animation duration
+            setTimeout(function() {
+                document.body.removeChild(ballContainer);
+            }, 1000); // Adjust to match animation duration
+        }
+    </script>
+    
+    
+</body>
+</html>

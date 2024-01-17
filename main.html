@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+
+        
+
+        header {
+            background-color: #a38767;
+            padding: 10px;
+            text-align: center;
+            color: #ffeed5;
+            flex: 1 100%;
+        }
+
+        .big-picture-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .big-picture {
+            width: 100%;
+            height: 100%; /* Set the height to 600 pixels */
+            object-fit: cover; /* Ensure the image covers the specified dimensions */
+            margin: 10px 0;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        @font-face {
+            font-family: 'Curry';
+            src: local('Curry'), url(Font/CurryBold.ttf) format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .nav {
+            display: flex;
+            flex: 1 100%;
+            justify-content: space-around;
+            background-color: #ffeed5;
+            padding: 10px;
+            text-align: center;
+
+            letter-spacing: 2px;
+            line-height: 1.5;
+            margin-bottom: 20px; /* Add margin to the bottom of the first nav */
+        }
+
+        .nav2 {
+            font-family: 'Curry', sans-serif;
+            font-size: 150%;
+            font-weight: 300;
+            margin-top: 20px; /* Add margin to the top of the second nav */
+
+            letter-spacing: 2px; /* ปรับระยะห่างระหว่างอักษร */
+            line-height: 2.3; /* ปรับความสูงของบรรทัด */
+
+            padding-left: 15%; /* เพิ่มช่องว่างทางซ้าย */
+            padding-right: 15%; /* เพิ่มช่องว่างทางขวา */
+            }
+
+        .nav3 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            background-color: #f0f0f0;
+        }
+
+        .nav3 img {
+            width: 200px; /* ปรับขนาดรูปภาพตามที่ต้องการ */
+            height: auto; /* รักษาสัดส่วนของรูปภาพ */
+            border-radius: 5%; /* ทำให้มีเส้นรอบรูป */
+            margin: 10px; /* สร้างช่องว่างระหว่างรูป */
+        }
+
+        .nav3 img:first-child {
+            width: 400px; /* ปรับขนาดรูปภาพตามที่ต้องการ */
+            height: auto; /* รักษาสัดส่วนของรูปภาพ */
+        }
+
+        .nav3 img:nth-child(2) {
+            width: 250px; /* ปรับขนาดรูปภาพตามที่ต้องการ */
+            height: auto; /* รักษาสัดส่วนของรูปภาพ */
+        }
+
+        .nav4 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            background-color: #f0f0f0;
+        }
+            .nav4 img {
+            border-radius: 5%; /* ทำให้มีเส้นรอบรูป */
+            margin: 10px; /* สร้างช่องว่างระหว่างรูป */
+        }
+
+        .nav4 .left-images {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end; /* จัดรูปทางซ้ายให้ชิดไปทางขวา */
+            margin-right: 20px; /* สร้างช่องว่างระหว่างรูปทางซ้ายและขวา */ 
+        }
+
+        .nav4 .left-images img:first-child {
+            width: 300px; /* ปรับขนาดรูปภาพตามที่ต้องการ */
+            height: auto; /* รักษาสัดส่วนของรูปภาพ */
+            margin-bottom: 10px; /* สร้างช่องว่างระหว่างรูปทางซ้ายและขวา */
+        }
+
+        .nav4 .left-images img:nth-child(2) {
+            width: 300px; /* ปรับขนาดรูปภาพตามที่ต้องการ */
+            height: auto; /* รักษาสัดส่วนของรูปภาพ */
+        }
+
+        .nav4 .right-image {
+            width: 350px; /* ปรับขนาดรูปภาพตามที่ต้องการ */
+            height: 500px; /* รักษาสัดส่วนของรูปภาพ */
+        }
+        .column {
+            flex: 1 30%;
+            margin: 10px;
+        }
+
+        .column img {
+            width: 100%;
+            height: 100px; /* Set the height to 100 pixels for all images in buttons */
+            object-fit: cover; /* Ensure the image covers the specified dimensions */
+        }
+
+        button {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            background-color: #bba481;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Main Menu</h1>
+    </header>
+
+    <div class="big-picture-container">
+        <img class="big-picture" id="slideshow" src="" alt="Slideshow Image">
+    </div>
+    <!-- First Nav -->
+    <nav class="nav">
+        <div class="column">
+            <img src="Picture/Menu/pic1.png" alt="Tradition Image">
+            <button onclick="location.href='tradition.html'">Tradition</button>
+        </div>
+        <div class="column">
+            <img src="Picture/Menu/pic2.png" alt="Food Image">
+            <button onclick="location.href='food.html'">Food</button>
+        </div>
+        <div class="column">
+            <img src="Picture/Menu/pic3.png" alt="Travel Image">
+            <button onclick="location.href='travel.html'">Travel</button>
+        </div>
+        <div class="column">
+            <img src="Picture/Menu/pic4.png" alt="Clothes Image">
+            <button onclick="location.href='clothes.html'">Clothes</button>
+        </div>
+
+    </nav>
+
+    <!-- Second Nav -->
+    <nav class="nav2">
+        <p>การเที่ยวไทยคือการผจญภัยในโลกที่อร่อยงดงามและเต็มไปด้วยประสบการณ์ที่น่าทึ่งทั้งวัฒนธรรมท้องถิ่นที่เป็นเอกลักษณ์และธรรมชาติที่งดงามมหาศาล ทั้งนี้เพราะความหลากหลายของวัฒนธรรมที่สะท้อนในวัดโบราณที่งดงามและสถานที่ศาสนาที่ลึกซึ้ง ไปจนถึงที่ท่องเที่ยวที่สวยงามทั้งทะเลสาบที่สมบูรณ์แบบและภูเขาที่เงียบสงบ
+        </p>
+        <p>
+            ทานอาหารไทยจะเป็นประสบการณ์ที่คุณจะไม่ลืม, รสชาติที่เผ็ดหวานเปรี้ยวจะทำให้คุณหลงใหล ลองสัมผัสชีวิตเมืองในกรุงเทพฯที่อุดมไปด้วยความคล่องตัวและมีชีวิตชีวามเยี่ยม, หรือท่องเที่ยวทางธรรมชาติที่หลากหลายในภาคเหนือ, ภาคใต้, และภาคตะวันออก
+        </p>
+        <p>
+            ทุกมุมของประเทศนี้มีเรื่องราวที่น่าสนใจที่รอคุณไปค้นหา ไม่ว่าจะเป็นการสัมผัสวัฒนธรรมท้องถิ่น, การช้อปปิ้งสินค้าศิลปะที่ทำด้วยมือ, หรือแม้กระทั่งการพักผ่อนในรีสอร์ทริมทะเลที่สวยงาม ทุกที่ในไทยเป็นประสบการณ์ที่เต็มไปด้วยความสุขและท้าทายที่คุณควรสัมผัสในทุกช่วงทางของการเดินทาง
+        </p>
+    </nav>
+    
+    <!-- Third Nav -->
+    <nav class="nav3">
+        <img src="Picture/undermain/pic1.jpg" alt="Image 1">
+        <img src="Picture/undermain/pic2.jpg" alt="Image 2">
+    </nav>
+
+    <!-- Fourth Nav -->
+    <nav class="nav4">
+        <div class="left-images">
+            <img src="Picture/undermain/pic3.webp" alt="Image 1">
+            <img src="Picture/undermain/pic4.avif" alt="Image 2">
+        </div>
+        <img class="right-image" src="Picture/undermain/pic6.jpg" alt="Image 3">
+    </nav>
+
+    <script>
+        var images = ["Picture/Random/pic1.png", "Picture/Random/pic2.png", "Picture/Random/pic3.png", "Picture/Random/pic4.png", "Picture/Random/pic5.png"];
+        var index = 0;
+
+        function changeImage() {
+            var slideshow = document.getElementById("slideshow");
+            slideshow.style.transform = "translateX(-50%)"; // Slide out to the left
+            setTimeout(function() {
+                slideshow.src = images[index];
+                slideshow.style.transform = "translateX(0)"; // Slide in from the right
+                index = (index + 1) % images.length;
+                setTimeout(changeImage, 2000); // Change image every 2 seconds
+            }, 500); // Wait for the slide-out animation to complete
+        }
+
+        changeImage();
+    </script>
+
+</body>
+</html>

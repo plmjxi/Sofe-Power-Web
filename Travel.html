@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        h1 {
+            display: inline-block;
+            margin: 0;
+        }
+
+        #random-button {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            transition: margin-top 0.5s ease;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .frame {
+            flex: 1;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            margin-right: 10px;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px; /* Add some bottom margin for separation */
+        }
+
+        .text-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center; /* Align text horizontally at the center */
+            padding: 20px;
+            text-align: center; /* Center text within the container */
+        }
+
+        h2 {
+            margin: 0;
+        }
+
+        @keyframes ballAnimation {
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        .ball-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            overflow: hidden;
+        }
+
+        .ball {
+            width: 20px;
+            height: 20px;
+            background-color: #aaa;
+            border-radius: 50%;
+            position: absolute;
+            animation: ballAnimation 1s linear infinite;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Travel</h1>
+        <button id="random-button" onclick="openRandomFrame()">Random</button>
+    </header>
+
+    <main id="main-container">
+        <!-- First row of frames -->
+        <!-- First row of frames -->
+        <div class="row">
+            <div class="frame">
+                <a href="Travel/Temple.html">
+                    <img src="Travel/Picture/Menu/pic1.jpg" alt="Image 1">
+                    <div class="text-container">
+                        <h2>Temple</h2>
+                        <!-- Add your content here -->
+                    </div>
+                </a>
+            </div>
+            <div class="frame">
+                <a href="Travel/Island.html">
+                    <img src="Travel/Picture/Menu/pic2.gif" alt="Image 2">
+                    <div class="text-container">
+                        <h2>Island</h2>
+                        <!-- Add your content here -->
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Second row of frames -->
+        <div class="row">
+            <div class="frame">
+                <a href="Travel/Waterfall.html">
+                    <img src="Travel/Picture/Menu/pic3.jpg" alt="Image 3">
+                    <div class="text-container">
+                        <h2>Waterfall</h2>
+                        <!-- Add your content here -->
+                    </div>
+                </a>
+            </div>
+            <div class="frame">
+                <a href="Travel/Mountain.html">
+                    <img src="Travel/Picture/Menu/pic4.jpg" alt="Image 4">
+                    <div class="text-container">
+                        <h2>Mountain</h2>
+                        <!-- Add your content here -->
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        function openRandomFrame() {
+            var mainContainer = document.getElementById('main-container');
+            mainContainer.style.marginTop = '250px';
+
+            createBalls();
+
+            setTimeout(function() {
+                mainContainer.style.marginTop = '20px';
+            }, 2000);
+        }
+
+        function createBalls() {
+            var ballContainer = document.createElement('div');
+            ballContainer.className = 'ball-container';
+            document.body.appendChild(ballContainer);
+
+            var pastelColors = [
+                '#ffd1dc', '#ffb6c1', '#ffecb3', '#ffddb3', '#b3e0ff',
+                '#b3e0c1', '#d9b3ff', '#c1b3ff', '#c1e0ff', '#d1ffc1'
+            ];
+
+            for (var i = 0; i < 50; i++) {
+                var ball = document.createElement('div');
+                ball.className = 'ball';
+                ball.style.top = Math.floor(Math.random() * 200) + 'px';
+                ball.style.left = Math.floor(Math.random() * window.innerWidth) + 'px';
+                ball.style.animationDuration = (Math.random() * 0.5 + 0.2) + 's';
+                ball.style.backgroundColor = pastelColors[i % pastelColors.length];
+                ball.style.width = Math.floor(Math.random() * 30 + 10) + 'px';
+                ball.style.height = ball.style.width;
+                ballContainer.appendChild(ball);
+            }
+
+            setTimeout(function() {
+                document.body.removeChild(ballContainer);
+            }, 1000);
+        }
+    </script>
+    
+</body>
+</html>
